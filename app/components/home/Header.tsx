@@ -398,7 +398,7 @@ export default function Header() {
             src="/images/apoint.png"
             alt="에이쁠포인트"
             className="w-[148px] h-[32px] max-md:w-[130px] max-md:h-[28px] max-md:absolute
-            max-md:top-[16px] max-md:right-[84px] max-sm:hidden"
+            max-md:top-[16px] max-md:right-[84px]"
           />
         </Link>
         <div className="min-w-[92px]">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -77,7 +77,7 @@ export default function MainSlider() {
   }
 
   return (
-    <div className="max-w-[2560px] w-full mx-auto">
+    <div className="max-w-[2560px]">
       <div
         className="mx-auto w-[calc(100%-80px)] overflow-hidden rounded-[28px] h-[600px] relative
       max-w-[2560px] max-md:h-[480px] max-md:w-[calc(100%-40px)] max-md:rounded-[16px]"

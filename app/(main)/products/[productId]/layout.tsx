@@ -9,9 +9,9 @@ export default function ProductDetailsLayout({
 }) {
   const random = getRandomInt(2);
 
-  if (random === 1) {
-    throw new Error('제품 로딩 에러');
-  }
+  // if (random === 1) {
+  //   throw new Error('제품 로딩 에러');
+  // }
 
   return (
     <div className="flex h-[500px]">
