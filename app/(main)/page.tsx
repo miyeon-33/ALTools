@@ -1,3 +1,4 @@
+import Integration from '@/app/components/home/Integration';
 import License from '@/app/components/home/License';
 import MainSlider from '@/app/components/home/MainSlider';
 import ProductList from '@/app/components/home/ProductList';
@@ -10,6 +11,7 @@ export default function Home() {
       <ProductList />
       <Subscribe />
       <License />
+      <Integration />
       {/* <Link href="/products">products</Link>
       <Link href="/articles/breaking-news-123">read in korean</Link>
       <Link href="/articles/breaking-news-123?lang=en">read in english</Link>
