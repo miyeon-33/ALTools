@@ -3,7 +3,9 @@ import License from '@/app/components/home/License';
 import MainSlider from '@/app/components/home/MainSlider';
 import ProductList from '@/app/components/home/ProductList';
 import Promotion from '@/app/components/home/Promotion';
+import Shortcut from '@/app/components/home/Shortcut';
 import Subscribe from '@/app/components/home/Subscribe';
+import Tip from '@/app/components/home/Tip';
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <License />
       <Integration />
       <Promotion />
+      <Tip />
+      <Shortcut />
       {/* <Link href="/products">products</Link>
       <Link href="/articles/breaking-news-123">read in korean</Link>
       <Link href="/articles/breaking-news-123?lang=en">read in english</Link>
