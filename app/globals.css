@@ -6,9 +6,9 @@
   --color-gray-500: #666;
   --color-gray-600: #1a1a1a;
   /* 1201미만 테블릿 */
-  --breakpoint-md: 1399px;
+  /* --breakpoint-md: 1399px; */
   /* 1025미만 테블릿 */
-  /* --breakpoint-md: 1025px; */
+  --breakpoint-md: 1025px;
   /* 768미만 모바일 */
   --breakpoint-sm: 768px;
 }
