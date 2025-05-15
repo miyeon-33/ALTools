@@ -1,4 +1,5 @@
 import { generatePagination } from '@/app/_lib/utils';
+import { table } from 'console';
 import { useEffect, useState } from 'react';
 
 export default function Pagination({
@@ -18,15 +19,23 @@ export default function Pagination({
   }, [page, totalPage]);
 
   return (
-    <div className="flex gap-x-[5px]">
+    <div className="flex gap-x-[2px] justify-center items-center mx-auto">
       <button
         type="button"
-        className="btn leading-[28px] px-[10px] text-[14px] disabled:opacity-50"
+        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] hover:bg-[#e5e8eb] rounded-[100%] border-0 ${
+          page === 1 ? 'bg-[0px_-38px]' : 'bg-[0px_0px]'
+        }`}
+        onClick={() => setPage(1)}
+        disabled={page === 1}
+      ></button>
+      <button
+        type="button"
+        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] hover:bg-[#e5e8eb] rounded-[100%] border-0 ${
+          page === 1 ? 'bg-[-38px_-38px]' : 'bg-[-38px_0px]'
+        }`}
         onClick={() => setPage(page - 1)}
         disabled={page === 1}
-      >
-        이전
-      </button>
+      ></button>
       {pageArr.map((item, i) => {
         if (item === '...') {
           return <span key={i}>...</span>;
@@ -37,8 +46,8 @@ export default function Pagination({
               key={i}
               onClick={() => setPage(item as number)}
               className={`${
-                page === item ? 'bg-point1 text-white' : 'text-black'
-              } btn leading-[28px] px-[10px] text-[14px]`}
+                page === item ? 'bg-[#e5e8eb]' : ''
+              } btn text-[#4e5968] leading-[38px] px-[10px] text-[13px] rounded-[100%] w-[38px] h-[38px] overflow-hidden border-0 font-bold hover:bg-[#e5e8eb]`}
             >
               {item}
             </button>
@@ -47,12 +56,20 @@ export default function Pagination({
       })}
       <button
         type="button"
-        className="btn leading-[28px] px-[10px] text-[14px] disabled:opacity-50"
+        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] border-0 rounded-[100%] ${
+          page === totalPage ? 'bg-[-76px_-38px]' : 'bg-[-76px_0px]'
+        } hover:bg-[#e5e8eb]`}
         onClick={() => setPage(page + 1)}
         disabled={page === totalPage}
-      >
-        다음
-      </button>
+      ></button>
+      <button
+        type="button"
+        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] border-0 hover:bg-[#e5e8eb] rounded-[100%] ${
+          page === totalPage ? 'bg-[-114px_-38px]' : 'bg-[-114px_0px]'
+        }`}
+        onClick={() => setPage(totalPage)}
+        disabled={page === totalPage}
+      ></button>
     </div>
   );
 }

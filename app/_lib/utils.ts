@@ -7,6 +7,7 @@ export function formatDate(date: Date): string {
 }
 
 export function generatePagination(currentPage: number, totalPages: number) {
+  currentPage = Math.max(1, currentPage);
   // 7페이지 이하일 때는 모든 페이지를 보여준다.
   if (totalPages <= 7) {
     return Array.from({ length: totalPages }, (_, i) => i + 1);

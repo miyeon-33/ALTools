@@ -316,43 +316,44 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <div
-                className="flex justify-center items-center gap-[67px] h-[70px] rounded-[10px]
+              <Link href="/products/ALTOOLS">
+                <div
+                  className="flex justify-center items-center gap-[67px] h-[70px] rounded-[10px]
               pl-[14px] bg-gradient-to-r from-[#ff6746] to-[#ff477e]"
-              >
-                <img
-                  src="/images/icon_pc_altools.png"
-                  alt="알집툴즈"
-                  className="w-[192px] h-auto"
-                />
-                <strong className="flex items-center justify-center text-[#fff] text-[12px] font-normal">
-                  알툴즈 모든 제품을 한 번에.
-                  <em className="text-[17px] font-bold pl-[12px] flex items-center gap-[7px]">
-                    알툴즈 통합팩
-                    <img
-                      src="/images/icons/go.svg"
-                      alt="go"
-                      className="w-[8px] h-[12px]"
-                    />
-                  </em>
-                </strong>
-              </div>
+                >
+                  <img
+                    src="/images/icon_pc_altools.png"
+                    alt="알집툴즈"
+                    className="w-[192px] h-auto"
+                  />
+                  <strong className="flex items-center justify-center text-[#fff] text-[12px] font-normal">
+                    알툴즈 모든 제품을 한 번에.
+                    <em className="text-[17px] font-bold pl-[12px] flex items-center gap-[7px]">
+                      알툴즈 통합팩
+                      <img
+                        src="/images/icons/go.svg"
+                        alt="go"
+                        className="w-[8px] h-[12px]"
+                      />
+                    </em>
+                  </strong>
+                </div>
+              </Link>
             </div>
           </li>
-          <li className="px-[12px] py-[16px] flex items-center hover:rounded-[7px] hover:bg-[rgba(139,149,161,0.1)] leading-[40px] h-[40px]">
-            알툴즈 AD-ZERO
-            <img
-              src="/images/drop.png"
-              alt="드랍"
-              className="w-[10px] h-[10px] ml-[6px]"
-            />
-          </li>
-          <li
-            className="px-[12px] py-[16px] hover:rounded-[7px]
+          <Link href="/adzero/intro">
+            <li className="px-[12px] py-[16px] flex items-center hover:rounded-[7px] hover:bg-[rgba(139,149,161,0.1)] leading-[40px] h-[40px] text-gray-600">
+              알툴즈 AD-ZERO
+            </li>
+          </Link>
+          <Link href="/business">
+            <li
+              className="px-[12px] py-[16px] hover:rounded-[7px] text-gray-600
           hover:bg-[rgba(139,149,161,0.1)] flex items-center h-[40px]"
-          >
-            비즈니스 구매
-          </li>
+            >
+              비즈니스 구매
+            </li>
+          </Link>
           <li
             className="px-[12px] py-[16px] flex items-center relative group
           hover:rounded-[7px] hover:bg-[rgba(139,149,161,0.1)] leading-[40px] h-[40px]"
@@ -369,24 +370,28 @@ export default function Header() {
             shadow-[0_0_1px_rgba(0,0,0,0.25),_0_8px_20px_rgba(0,0,0,0.15)]"
             >
               <ul className="text-[14px] font-normal">
-                <li
-                  className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center
+                <Link href="/service/FAQ">
+                  <li
+                    className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center
                 hover:bg-[rgba(139,149,161,0.1)] hover:rounded-[7px]"
-                >
-                  자주하는 질문
-                </li>
+                  >
+                    자주하는 질문
+                  </li>
+                </Link>
                 <li
                   className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center
                 hover:bg-[rgba(139,149,161,0.1)] hover:rounded-[7px]"
                 >
                   1:1 문의하기
                 </li>
-                <li
-                  className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center
+                <Link href="/service/notice">
+                  <li
+                    className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center
                 hover:bg-[rgba(139,149,161,0.1)] hover:rounded-[7px]"
-                >
-                  공지사항
-                </li>
+                  >
+                    공지사항
+                  </li>
+                </Link>
               </ul>
             </div>
           </li>
