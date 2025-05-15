@@ -8,11 +8,41 @@ export const handlers = [
     await sleep(200);
 
     const url = new URL(request.url);
-    const page = Number(url.searchParams.get('page'));
-    const menu = Number(url.searchParams.get('menu')); // menu 값 가져오기
+    const page = Number(url.searchParams.get('page')) || 1;
+    const menu = Number(url.searchParams.get('menu')) || -1; // '전체'는 menu<0
+    const keyword = url.searchParams.get('keyword') || ''; // 검색어 가져오기
 
-    const filteredData =
-      menu > 0 ? faq.filter((item) => item.menu === menu) : faq;
+    let filteredData = faq;
+
+    // 조건1: menu와 keyword가 모두 있을 경우
+    if (menu > 0 && keyword) {
+      filteredData = faq.filter(
+        (item) =>
+          item.menu === menu &&
+          item.title.toLowerCase().includes(keyword.toLowerCase())
+      );
+    } else if (menu < 0 && keyword) {
+      // 조건2: keyword만 있는 경우 ('전체'에 검색어 포함된 데이터만 렌더링)
+      filteredData = faq.filter((item) =>
+        item.title.toLowerCase().includes(keyword.toLowerCase())
+      );
+    } else if (menu > 0 && !keyword) {
+      // 조건3: menu만 있는 경우
+      filteredData = faq.filter((item) => item.menu === menu);
+    } else {
+      filteredData = faq;
+    }
+
+    return HttpResponse.json(getDataByPage(filteredData, page, 10));
+
+    // if (keyword) {
+    //   const searchData = faq.filter((item) => {
+    //     return item.title.toLowerCase().includes(keyword.toLowerCase());
+    //   });
+    // }
+
+    // const filteredData =
+    //   menu > 0 ? faq.filter((item) => item.menu === menu) : faq;
 
     function getDataByPage(
       data: {
@@ -39,18 +69,6 @@ export const handlers = [
         total: data.length,
       };
     }
-
-    return HttpResponse.json(getDataByPage(filteredData, page, 10));
-  }),
-  http.post('http://localhost:9090/service/FAQ', async ({ request }) => {
-    await sleep(200);
-
-    const item: any = await request.json();
-
-    maxId++;
-    faq.push({ ...item, id: maxId });
-
-    return HttpResponse.json(faq);
   }),
 ];
 

@@ -30,10 +30,12 @@ export default function FAQ({
 }) {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
-  const paramsObj = use(searchParams);
-  const [params] = useState(new URLSearchParams(paramsObj));
   const [menu, setMenu] = useState(1);
-  // const inputRef = useRef<HTMLInputElement | null>(null);
+  const [keyword, setKeyword] = useState('');
+  // const paramsObj = use(searchParams);
+  // const [params] = useState(new URLSearchParams(paramsObj));
+
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
 
   // active
@@ -43,14 +45,14 @@ export default function FAQ({
     result: User[];
     total: number;
   }>({
-    queryKey: ['faq', page, menu],
+    queryKey: ['faq', page, menu, keyword],
     queryFn: () =>
-      fetch(`http://localhost:9090/service/FAQ?page=${page}&menu=${menu}`).then(
-        (res) => res.json()
-      ),
+      fetch(
+        `http://localhost:9090/service/FAQ?page=${page}&menu=${menu}&keyword=${keyword}`
+      ).then((res) => res.json()),
   });
 
-  // 토탈페이지
+  // 총 페이지 수 계산
   useEffect(() => {
     if (data?.total) {
       setTotalPage(Math.ceil(data.total / 10));
@@ -58,43 +60,82 @@ export default function FAQ({
   }, [data]);
 
   // 페이지업데이트
-  useEffect(() => {
-    params.set('page', page.toString());
-    router.push(`?${params.toString()}`);
-  }, [page]);
+  // useEffect(() => {
+  //   params.set('page', page.toString());
+  //   router.push(`?${params.toString()}`);
+  // }, [page]);
 
   // 새로고침시 한번만 menu 쿼리 삭제
-  useEffect(() => {
-    params.delete('menu');
-    router.push(`?${params.toString()}`);
-  }, []);
+  // useEffect(() => {
+  //   params.delete('menu');
+  //   router.push(`?${params.toString()}`);
+  // }, []);
 
+  // 메뉴변경 핸들러
   function handleMenu(e: React.MouseEvent<HTMLButtonElement>, index: number) {
-    setMenu(index);
-    if (index > 0) {
-      params.set('menu', index.toString());
-    } else {
-      params.delete('menu');
-    }
-    router.push(`?${params.toString()}`);
+    setMenu(index > 0 ? index : -1);
     setActiveTab((e.target as HTMLButtonElement).innerText);
     setPage(1);
+
+    router.push(`?page=1&menu=${index}&keyword=${keyword}`);
   }
 
+  // 검색 핸들러
+  function handleSearch(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const keywordValue = inputRef?.current?.value || '';
+    setKeyword(keywordValue);
+
+    router.push(`?page=1&menu=${menu}&keyword=${keywordValue}`);
+  }
+
+  // function handleMenu(e: React.MouseEvent<HTMLButtonElement>, index: number) {
+  //   setMenu(index);
+  //   if (index > 0) {
+  //     params.set('menu', index.toString());
+  //   } else {
+  //     params.delete('menu');
+  //   }
+  //   router.push(`?${params.toString()}`);
+  //   setActiveTab((e.target as HTMLButtonElement).innerText);
+  //   setPage(1);
+  // }
+
+  // function handleSearch(e: React.FormEvent<HTMLFormElement>) {
+  //   e.preventDefault();
+  //   // 검색필드 값이 있을 경우 쿼리 파라미터 추가
+  //   if (inputRef?.current?.value) {
+  //     params.set('keyword', inputRef.current.value);
+  //   } else {
+  //     // 검색필드 값이 업을 경우 쿼리 파라미터 삭제
+  //     params.delete('search');
+  //   }
+  //   // url에 쿼리 파라미터 추가
+  //   router.push(`?${params.toString()}`);
+  // }
+
   return (
-    <main className="min-h-[calc(100vh-310px)] max-md:pt-[60px] px-[40px] max-md:px-0">
-      <div className="mx-auto max-w-[1120px] pt-[80px] pb-[120px] max-md:py-[40px] ">
+    <main className="min-h-[calc(100vh-310px)] max-md:pt-[60px] px-[40px] max-md:px-0 pt-[80px]">
+      <div className="mx-auto max-w-[1120px]  pb-[120px] pt-[80px] max-md:py-[40px]">
         <div className="mb-[48px] max-md:px-[20px] max-md:mb-[16px]">
           <h2 className="text-[36px] font-bold break-keep mb-[44px] text-gray-600 max-md:text-[24px] max-md:mb-[20px]">
             자주 하는 질문
           </h2>
           <div className="relative">
-            <input
-              type="text"
-              placeholder="궁금한 점을 검색해 보세요."
-              className="w-full h-[72px] text-[28px] bg-[#f5f6f7] rounded-[8px] pr-[72px] pl-[20px] border-0 text-gray-600"
-            />
-            <button className="absolute top-0 right-0 w-[72px] h-[72px] bg-[url('/images/icons/search.svg')] bg-[50%_50%] bg-no-repeat"></button>
+            <form onSubmit={handleSearch}>
+              <input
+                ref={inputRef}
+                type="search"
+                placeholder="궁금한 점을 검색해 보세요."
+                className="w-full h-[72px] text-[28px] bg-[#f5f6f7] rounded-[8px] pr-[72px] pl-[20px] border-0 text-gray-600"
+              />
+              <button
+                type="submit"
+                className="absolute top-0 right-0 w-[72px] h-[72px] bg-[url('/images/icons/search.svg')] bg-[50%_50%] bg-no-repeat"
+              ></button>
+            </form>
+            {isPending && <p>Loading...</p>}
+            {isError && <p>{error.message}</p>}
           </div>
         </div>
         <div className="mb-[40px] max-md:mb-[24px]">
