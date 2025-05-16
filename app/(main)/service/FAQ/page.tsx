@@ -23,6 +23,26 @@ const categories = [
   '기타 문의',
 ];
 
+function BoldText({ text, keyword }: { text: string; keyword: string }) {
+  if (!keyword) return <span>{text}</span>;
+
+  const parts = text.split(new RegExp(`(${keyword})`, 'gi'));
+
+  return (
+    <>
+      {parts.map((part, index) =>
+        part.toLowerCase() === keyword.toLowerCase() ? (
+          <b key={index} className="text-[#08f]">
+            {part}
+          </b>
+        ) : (
+          <span key={index}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
 export default function FAQ({
   searchParams,
 }: {
@@ -32,8 +52,8 @@ export default function FAQ({
   const [totalPage, setTotalPage] = useState(0);
   const [menu, setMenu] = useState(1);
   const [keyword, setKeyword] = useState('');
-  // const paramsObj = use(searchParams);
-  // const [params] = useState(new URLSearchParams(paramsObj));
+  const paramsObj = use(searchParams);
+  const [params] = useState(new URLSearchParams(paramsObj));
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
@@ -59,60 +79,49 @@ export default function FAQ({
     }
   }, [data]);
 
-  // 페이지업데이트
-  // useEffect(() => {
-  //   params.set('page', page.toString());
-  //   router.push(`?${params.toString()}`);
-  // }, [page]);
+  // 검색 결과 개수
+  const searchResultCount = data?.result.length || 0;
 
   // 새로고침시 한번만 menu 쿼리 삭제
-  // useEffect(() => {
-  //   params.delete('menu');
-  //   router.push(`?${params.toString()}`);
-  // }, []);
+  useEffect(() => {
+    params.delete('menu');
+    router.push(`?${params.toString()}`);
+  }, []);
+
+  // 페이지 변경 핸들러
+  useEffect(() => {
+    params.set('page', page.toString());
+    router.push(`?${params.toString()}`);
+  }, [page]);
 
   // 메뉴변경 핸들러
   function handleMenu(e: React.MouseEvent<HTMLButtonElement>, index: number) {
     setMenu(index > 0 ? index : -1);
     setActiveTab((e.target as HTMLButtonElement).innerText);
     setPage(1);
-
-    router.push(`?page=1&menu=${index}&keyword=${keyword}`);
+    if (index > 0) {
+      params.set('menu', index.toString());
+    } else {
+      params.delete('menu');
+    }
+    params.set('page', '1');
+    router.push(`?${params.toString()}`);
   }
 
   // 검색 핸들러
   function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const keywordValue = inputRef?.current?.value || '';
-    setKeyword(keywordValue);
+    const searchValue = inputRef?.current?.value || '';
+    setKeyword(searchValue);
+    if (searchValue) {
+      params.set('keyword', searchValue);
+    } else {
+      params.delete('keyword');
+    }
 
-    router.push(`?page=1&menu=${menu}&keyword=${keywordValue}`);
+    params.set('page', '1');
+    router.push(`?${params.toString()}`);
   }
-
-  // function handleMenu(e: React.MouseEvent<HTMLButtonElement>, index: number) {
-  //   setMenu(index);
-  //   if (index > 0) {
-  //     params.set('menu', index.toString());
-  //   } else {
-  //     params.delete('menu');
-  //   }
-  //   router.push(`?${params.toString()}`);
-  //   setActiveTab((e.target as HTMLButtonElement).innerText);
-  //   setPage(1);
-  // }
-
-  // function handleSearch(e: React.FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
-  //   // 검색필드 값이 있을 경우 쿼리 파라미터 추가
-  //   if (inputRef?.current?.value) {
-  //     params.set('keyword', inputRef.current.value);
-  //   } else {
-  //     // 검색필드 값이 업을 경우 쿼리 파라미터 삭제
-  //     params.delete('search');
-  //   }
-  //   // url에 쿼리 파라미터 추가
-  //   router.push(`?${params.toString()}`);
-  // }
 
   return (
     <main className="min-h-[calc(100vh-310px)] max-md:pt-[60px] px-[40px] max-md:px-0 pt-[80px]">
@@ -160,24 +169,40 @@ export default function FAQ({
             ))}
           </div>
         </div>
+        <p className="text-[18px] font-bold py-[14px] px-[20px] text-gray-600">
+          {keyword && (
+            <>
+              <span className="text-[#08f]">{keyword}</span>에 대해 총{' '}
+              {searchResultCount}건이 검색되었습니다.
+            </>
+          )}
+        </p>
         <div className="mb-[60px] max-md:px-[20px] max-md:mb-[40px]">
-          {data?.result?.map((item) => (
-            <div
-              key={item.id}
-              className="flex justify-start items-center gap-[34px] text-[#4e5968] break-keep rounded-[8px] pt-[28px] pr-[34px] pb-[28px] pl-[20px] hover:bg-[rgba(139,149,161,0.1)] transition-all duration-200 max-md:py-[14px] max-md:pr-0 max-md:pl-0 max-md:flex-col max-md:items-start max-md:gap-y-[6px]"
-            >
-              <div className="min-w-[180px] basis-[180px] text-[15px] max-md:max-w-full max-md:basis-0 max-md:text-[13px] max-md:order-2 max-md:pl-[26px] ">
-                {item.category}
-              </div>
+          {searchResultCount > 0 ? (
+            data?.result?.map((item) => (
               <div
-                className="flex-1 text-[18px] font-semibold pl-[26px] relative
-          after:bg-[url('/images/icons/subgo.svg')] after:w-[16px] after:h-[16px] after:bg-no-repeat after:content[''] after:block flex items-center justify-between max-md:after:hidden"
+                key={item.id}
+                className="flex justify-start items-center gap-[34px] text-[#4e5968] break-keep rounded-[8px] pt-[28px] pr-[34px] pb-[28px] pl-[20px] hover:bg-[rgba(139,149,161,0.1)] transition-all duration-200 max-md:py-[14px] max-md:pr-0 max-md:pl-0 max-md:flex-col max-md:items-start max-md:gap-y-[6px]"
               >
-                <div className="absolute top-0 left-0 text-[#8b95a1]">Q.</div>
-                <span className="text-gray-600">{item.title}</span>
+                <div className="min-w-[180px] basis-[180px] text-[15px] max-md:max-w-full max-md:basis-0 max-md:text-[13px] max-md:order-2 max-md:pl-[26px] ">
+                  {item.category}
+                </div>
+                <div
+                  className="flex-1 text-[18px] font-semibold pl-[26px] relative
+          after:bg-[url('/images/icons/subgo.svg')] after:w-[16px] after:h-[16px] after:bg-no-repeat after:content[''] after:block flex items-center justify-between max-md:after:hidden"
+                >
+                  <div className="absolute top-0 left-0 text-[#8b95a1]">Q.</div>
+                  <span className="text-gray-600">
+                    <BoldText text={item.title} keyword={keyword} />
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p className="flex flex-col justify-center items-center h-[240px] text-center text-[15px] text-[#8b95a1] before:content[''] before:w-[32px] before:h-[32px] before:block before:bg-[url('/images/icons/nosearch.svg')] before:bg-[100%_auto] before:bg-no-repeat before:mx-auto before:mb-[8px]">
+              검색결과가 없습니다.
+            </p>
+          )}
         </div>
         {data && data?.result?.length > 0 && (
           <Pagination page={page} setPage={setPage} totalPage={totalPage} />

@@ -9,7 +9,7 @@ export const handlers = [
 
     const url = new URL(request.url);
     const page = Number(url.searchParams.get('page')) || 1;
-    const menu = Number(url.searchParams.get('menu')) || -1; // '전체'는 menu<0
+    const menu = Number(url.searchParams.get('menu')); // '전체'는 menu<0
     const keyword = url.searchParams.get('keyword') || ''; // 검색어 가져오기
 
     let filteredData = faq;
