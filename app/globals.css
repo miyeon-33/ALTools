@@ -1337,4 +1337,10 @@ input[type='radio']:checked + label::before {
       transform: translateY(100px);
     }
   }
+
+  @keyframes moveIcon {
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
