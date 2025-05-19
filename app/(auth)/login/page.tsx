@@ -9,7 +9,9 @@ export default function Login() {
       <div className="w-full">
         <div className="mx-auto max-w-[400px]">
           <div className="text-center mb-[40px] max-md:mb-[24px]">
-            <h2 className="inline-block w-[121px] h-[30px] bg-[url('/images/icons/loginlogo.svg')] bg-[50%_50%] bg-[100%_auto] bg-no-repeat max-md:w-[79px] max-md:h-[20px]"></h2>
+            <Link href="/">
+              <h2 className="inline-block w-[121px] h-[30px] bg-[url('/images/icons/loginlogo.svg')] bg-[50%_50%] bg-[100%_auto] bg-no-repeat max-md:w-[79px] max-md:h-[20px]"></h2>
+            </Link>
             <p className="text-[18px] font-semibold pt-[30px] text-gray-600 max-md:text-[15px] max-md:font-normal max-md:pt-[16px]">
               로그인하고 더 많은 혜택과 서비스를 누리세요!
             </p>
