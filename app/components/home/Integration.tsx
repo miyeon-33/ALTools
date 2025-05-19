@@ -18,7 +18,7 @@ export default function Integration() {
           {/* 통합팩 */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALTOOLS"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img
@@ -55,7 +55,7 @@ export default function Integration() {
           {/* 알집 */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALZIP"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img
@@ -95,7 +95,7 @@ export default function Integration() {
           {/* 알약 */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALYAC"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img
@@ -137,7 +137,7 @@ export default function Integration() {
           {/* 알씨 */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALSEE"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img
@@ -178,7 +178,7 @@ export default function Integration() {
           {/* 알캡처 */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALCAPTURE"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img
@@ -218,7 +218,7 @@ export default function Integration() {
           {/* 알PDF */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALPDF"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img
@@ -259,7 +259,7 @@ export default function Integration() {
           {/* 알송 */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALSONG"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img
@@ -299,7 +299,7 @@ export default function Integration() {
           {/* 알드라이브 */}
           <li className="w-[calc(25%-15px)] max-md:w-[calc(50%-10px)] max-sm:w-full transition-all duration-200 hover:-translate-y-[10px] max-md:hover:translate-y-0">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALDRIVE"
               className="rounded-[16px] overflow-hidden block shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]"
             >
               <img

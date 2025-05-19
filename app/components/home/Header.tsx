@@ -378,12 +378,14 @@ export default function Header() {
                     자주하는 질문
                   </li>
                 </Link>
-                <li
-                  className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center
+                <Link href="/login">
+                  <li
+                    className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center
                 hover:bg-[rgba(139,149,161,0.1)] hover:rounded-[7px]"
-                >
-                  1:1 문의하기
-                </li>
+                  >
+                    1:1 문의하기
+                  </li>
+                </Link>
                 <Link href="/service/notice">
                   <li
                     className="py-[10px] px-[8px] h-[34px] leading-[34px] flex items-center

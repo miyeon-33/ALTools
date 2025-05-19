@@ -7,7 +7,7 @@ export default function Shortcut() {
         <ul className="flex justify-between items-start gap-[20px] max-md:flex-col max-md:items-start max-md:justify-start">
           <li className="basis-[360px] max-md:basis-full max-md:w-full">
             <Link
-              href="/estpublic"
+              href="https://blog.naver.com/estpublic"
               className="flex items-center justify-start gap-[28px] h-[140px] bg-[#fff] rounded-[16px] pr-[40px] pl-[52px] transition-all duration-200 hover:shadow-[0_0_2px_rgba(0,0,0,.08),4px_12px_36px_rgba(0,0,0,.09)]
               max-md:gap-[24px] max-md:py-0 max-md:px-[24px] max-md:h-[100px] max-md:hover:shadow-none"
             >
@@ -28,12 +28,12 @@ export default function Shortcut() {
           </li>
           <li className="basis-[360px] max-md:basis-full max-md:w-full">
             <Link
-              href="/estpublic"
+              href="https://estsoft.ai/"
               className="flex items-center justify-start gap-[28px] h-[140px] bg-[#fff] rounded-[16px] pr-[40px] pl-[52px] transition-all duration-200 hover:shadow-[0_0_2px_rgba(0,0,0,.08),4px_12px_36px_rgba(0,0,0,.09)] max-md:h-[100px] max-md:gap-[24px] max-md:py-0 max-md:px-[24px] max-md:hover:shadow-none"
             >
               <img
                 src="/images/estsoft.png"
-                alt="블로그"
+                alt="이스트소프"
                 className="w-[40px] h-[40px]"
               />
               <p className="whitespace-nowrap">
@@ -48,12 +48,12 @@ export default function Shortcut() {
           </li>
           <li className="basis-[360px] max-md:basis-full max-md:w-full">
             <Link
-              href="/estpublic"
+              href="https://www.estsecurity.com/"
               className="flex items-center justify-start gap-[28px] h-[140px] bg-[#fff] rounded-[16px] pr-[40px] pl-[52px] transition-all duration-200 hover:shadow-[0_0_2px_rgba(0,0,0,.08),4px_12px_36px_rgba(0,0,0,.09)] max-md:h-[100px] max-md:gap-[24px] max-md:py-0 max-md:px-[24px] max-md:hover:shadow-none"
             >
               <img
                 src="/images/estsecurity.png"
-                alt="블로그"
+                alt="이스트시큐리티"
                 className="w-[40px] h-[40px]"
               />
               <p className="whitespace-nowrap">

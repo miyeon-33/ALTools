@@ -35,15 +35,6 @@ export const handlers = [
 
     return HttpResponse.json(getDataByPage(filteredData, page, 10));
 
-    // if (keyword) {
-    //   const searchData = faq.filter((item) => {
-    //     return item.title.toLowerCase().includes(keyword.toLowerCase());
-    //   });
-    // }
-
-    // const filteredData =
-    //   menu > 0 ? faq.filter((item) => item.menu === menu) : faq;
-
     function getDataByPage(
       data: {
         id: number;
@@ -69,6 +60,22 @@ export const handlers = [
         total: data.length,
       };
     }
+  }),
+
+  // id 조회 핸들러
+  http.get('http://localhost:9090/service/FAQ/:FAQId', async ({ params }) => {
+    await sleep(200);
+
+    const { FAQId } = params;
+    const faqItem = faq.find((item) => item.id === Number(FAQId));
+
+    if (!faqItem) {
+      return new HttpResponse(null, {
+        status: 404,
+        statusText: 'FAQ Not Found',
+      });
+    }
+    return HttpResponse.json(faqItem);
   }),
 ];
 

@@ -56,7 +56,7 @@ export default function Tip() {
             <div className="absolute top-[36px] right-[36px] w-[33px] h-[33px] bg-[url('/images/icons/tip.svg')] bg-no-repeat transition-all duration-200 group-hover:translate-x-[10px]"></div>
           </Link>
           <Link
-            href="/adzero/intro"
+            href="https://blog.naver.com/estpublic/222448734832"
             className="p-[36px] row-start-1 row-end-2 col-start-2 col-end-3
             min-h-[360px] text-left rounded-[28px] relative overflow-hidden bg-[url('/images/gridBox2.png')] bg-cover bg-[100%_100%] transition-all duration-200 hover:-translate-y-[10px] group max-md:w-full max-md:min-h-[220px] max-md:rounded-[16px] max-md:py-[20px] max-md:px-[24px] max-md:hover:translate-y-0"
           >
@@ -71,7 +71,7 @@ export default function Tip() {
             </div>
           </Link>
           <Link
-            href="/adzero/intro"
+            href="https://blog.naver.com/estpublic/223787263512"
             className="p-[36px] row-start-1 row-end-2 col-start-3 col-end-4
             min-h-[360px] text-left rounded-[28px] relative overflow-hidden bg-[url('/images/gridBox3.png')] bg-cover bg-[100%_100%] transition-all duration-200 hover:-translate-y-[10px] group max-md:w-full max-md:min-h-[220px] max-md:rounded-[16px] max-md:py-[20px] max-md:px-[24px] max-md:hover:translate-y-0"
           >
@@ -88,7 +88,7 @@ export default function Tip() {
             </div>
           </Link>
           <Link
-            href="/adzero/intro"
+            href="https://blog.naver.com/estpublic/222160800027"
             className="p-[36px] row-start-2 row-end-3 col-start-2 col-end-3
             min-h-[360px] text-left rounded-[28px] relative overflow-hidden bg-[url('/images/gridBox4.png')] bg-cover bg-[100%_100%] transition-all duration-200 hover:-translate-y-[10px] group max-md:w-full max-md:min-h-[220px] max-md:rounded-[16px] max-md:py-[20px] max-md:px-[24px] max-md:hover:translate-y-0"
           >
@@ -105,7 +105,7 @@ export default function Tip() {
             </div>
           </Link>
           <Link
-            href="/adzero/intro"
+            href="https://blog.naver.com/estpublic/222348990244"
             className="p-[36px] row-start-2 row-end-3 col-start-3 col-end-4
             min-h-[360px] text-left rounded-[28px] relative overflow-hidden bg-[url('/images/gridBox5.png')] bg-cover bg-[100%_100%] transition-all duration-200 hover:-translate-y-[10px] group max-md:w-full max-md:min-h-[220px] max-md:rounded-[16px] max-md:py-[20px] max-md:px-[24px] max-md:hover:translate-y-0"
           >

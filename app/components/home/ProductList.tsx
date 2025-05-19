@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 
-import { useEffect, useState } from 'react';
-
 const productsData = [
   {
     id: 1,
@@ -11,6 +9,7 @@ const productsData = [
     image: '/images/icon_120_altools.png',
     introduce: `내 PC사용을
     간편하고 편리하게`,
+    link: 'ALTOOLS',
   },
   {
     id: 2,
@@ -18,6 +17,7 @@ const productsData = [
     image: '/images/icon_alzip.png',
     introduce: `전국민 압축
     프로그램`,
+    link: 'ALZIP',
   },
   {
     id: 3,
@@ -25,6 +25,7 @@ const productsData = [
     image: '/images/icon_alyac.png',
     introduce: `전국민
     백신 프로그램`,
+    link: 'ALYAC',
   },
   {
     id: 4,
@@ -32,6 +33,7 @@ const productsData = [
     image: '/images/icon_alsee.png',
     introduce: `이미지 뷰어,
     사진 편집`,
+    link: 'ALSEE',
   },
   {
     id: 5,
@@ -39,6 +41,7 @@ const productsData = [
     image: '/images/icon_alcapture.png',
     introduce: `쉽고 빠른
     화면 캡처`,
+    link: 'ALCAPTURE',
   },
   {
     id: 6,
@@ -46,6 +49,7 @@ const productsData = [
     image: '/images/icon_alpdf.png',
     introduce: `PDF 뷰어/리더,
     PDF 변환/편집`,
+    link: 'ALPDF',
   },
   {
     id: 7,
@@ -53,6 +57,7 @@ const productsData = [
     image: '/images/icon_alsong.png',
     introduce: `온라인 음악가사
     플레이어`,
+    link: 'ALSONG',
   },
   {
     id: 8,
@@ -60,6 +65,7 @@ const productsData = [
     image: '/images/icon_aldrive.png',
     introduce: `쉽고 편리한
     파일전송`,
+    link: 'ALDRIVE',
   },
 ];
 
@@ -81,7 +87,7 @@ export default function ProductList() {
       >
         {productsData.map((product) => (
           <Link
-            href="/products/ALTOOLS"
+            href={`/products/${product.link}`}
             className="flex justify-center items-center pt-[26px] pb-[28px] gap-x-[6.4%]
               rounded-[12px] max-md:flex-col max-md:py-[20px] max-md:gap-y-[10px] shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]
               w-full min-w-[90px] transition-all duration-200 hover:-translate-y-[7px] max-sm:hover:translate-y-0"

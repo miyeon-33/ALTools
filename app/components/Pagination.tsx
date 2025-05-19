@@ -1,5 +1,4 @@
 import { generatePagination } from '@/app/_lib/utils';
-import { table } from 'console';
 import { useEffect, useState } from 'react';
 
 export default function Pagination({
@@ -22,16 +21,20 @@ export default function Pagination({
     <div className="flex gap-x-[2px] justify-center items-center mx-auto">
       <button
         type="button"
-        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] hover:bg-[#e5e8eb] rounded-[100%] border-0 ${
-          page === 1 ? 'bg-[0px_-38px]' : 'bg-[0px_0px]'
+        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px]  rounded-[100%] border-0 ${
+          page === 1
+            ? 'bg-[0px_-38px] cursor-default'
+            : 'bg-[0px_0px] hover:bg-[#e5e8eb]'
         }`}
         onClick={() => setPage(1)}
         disabled={page === 1}
       ></button>
       <button
         type="button"
-        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] hover:bg-[#e5e8eb] rounded-[100%] border-0 ${
-          page === 1 ? 'bg-[-38px_-38px]' : 'bg-[-38px_0px]'
+        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px]  rounded-[100%] border-0 ${
+          page === 1
+            ? 'bg-[-38px_-38px] cursor-default'
+            : 'bg-[-38px_0px] hover:bg-[#e5e8eb]'
         }`}
         onClick={() => setPage(page - 1)}
         disabled={page === 1}
@@ -57,15 +60,19 @@ export default function Pagination({
       <button
         type="button"
         className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] border-0 rounded-[100%] ${
-          page === totalPage ? 'bg-[-76px_-38px]' : 'bg-[-76px_0px]'
-        } hover:bg-[#e5e8eb]`}
+          page === totalPage
+            ? 'bg-[-76px_-38px] cursor-default'
+            : 'bg-[-76px_0px] hover:bg-[#e5e8eb]'
+        } `}
         onClick={() => setPage(page + 1)}
         disabled={page === totalPage}
       ></button>
       <button
         type="button"
         className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] border-0 hover:bg-[#e5e8eb] rounded-[100%] ${
-          page === totalPage ? 'bg-[-114px_-38px]' : 'bg-[-114px_0px]'
+          page === totalPage
+            ? 'bg-[-114px_-38px] cursor-default'
+            : 'bg-[-114px_0px] hover:bg-[#e5e8eb]'
         }`}
         onClick={() => setPage(totalPage)}
         disabled={page === totalPage}

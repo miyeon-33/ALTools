@@ -48,19 +48,19 @@ export default function FAQ({
 }: {
   searchParams: Promise<{ menu: string; page: string }>;
 }) {
-  const [page, setPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(0);
-  const [menu, setMenu] = useState(1);
-  const [keyword, setKeyword] = useState('');
   const paramsObj = use(searchParams);
   const [params] = useState(new URLSearchParams(paramsObj));
+
+  const [page, setPage] = useState(Number(paramsObj.page) || 1);
+  const [menu, setMenu] = useState(Number(paramsObj.menu) || -1);
+  const [totalPage, setTotalPage] = useState(0);
+  const [keyword, setKeyword] = useState('');
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
 
   // active
-  const [activeTab, setActiveTab] = useState('전체');
-
+  const [activeTab, setActiveTab] = useState(paramsObj.menu || '0');
   const { isPending, data, isError, error } = useQuery<{
     result: User[];
     total: number;
@@ -83,10 +83,10 @@ export default function FAQ({
   const searchResultCount = data?.result.length || 0;
 
   // 새로고침시 한번만 menu 쿼리 삭제
-  useEffect(() => {
-    params.delete('menu');
-    router.push(`?${params.toString()}`);
-  }, []);
+  // useEffect(() => {
+  //   params.delete('menu');
+  //   router.push(`?${params.toString()}`);
+  // }, []);
 
   // 페이지 변경 핸들러
   useEffect(() => {
@@ -94,10 +94,14 @@ export default function FAQ({
     router.push(`?${params.toString()}`);
   }, [page]);
 
+  useEffect(() => {
+    setMenu(Number(paramsObj.menu) || -1);
+  }, [paramsObj.menu]);
+
   // 메뉴변경 핸들러
   function handleMenu(e: React.MouseEvent<HTMLButtonElement>, index: number) {
     setMenu(index > 0 ? index : -1);
-    setActiveTab((e.target as HTMLButtonElement).innerText);
+    setActiveTab(index.toString());
     setPage(1);
     if (index > 0) {
       params.set('menu', index.toString());
@@ -155,14 +159,14 @@ export default function FAQ({
                 type="button"
                 key={category}
                 className={`flex-none p-[4px] text-center leading-[59px] text-[16px] font-bold whitespace-nowrap cursor-pointer relative ${
-                  activeTab === category
+                  activeTab === index.toString()
                     ? 'text-[#1a1a1a]'
                     : 'text-[#8b95a1] transition-all hover:text-[#1a1a1a] duration-200'
                 }
             `}
               >
                 {category}
-                {activeTab === category && (
+                {activeTab === index.toString() && (
                   <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#1a1a1a] border"></span>
                 )}
               </button>
@@ -180,23 +184,27 @@ export default function FAQ({
         <div className="mb-[60px] max-md:px-[20px] max-md:mb-[40px]">
           {searchResultCount > 0 ? (
             data?.result?.map((item) => (
-              <div
-                key={item.id}
-                className="flex justify-start items-center gap-[34px] text-[#4e5968] break-keep rounded-[8px] pt-[28px] pr-[34px] pb-[28px] pl-[20px] hover:bg-[rgba(139,149,161,0.1)] transition-all duration-200 max-md:py-[14px] max-md:pr-0 max-md:pl-0 max-md:flex-col max-md:items-start max-md:gap-y-[6px]"
-              >
-                <div className="min-w-[180px] basis-[180px] text-[15px] max-md:max-w-full max-md:basis-0 max-md:text-[13px] max-md:order-2 max-md:pl-[26px] ">
-                  {item.category}
-                </div>
+              <Link href={`/service/FAQ/${item.id}`} key={item.id}>
                 <div
-                  className="flex-1 text-[18px] font-semibold pl-[26px] relative
-          after:bg-[url('/images/icons/subgo.svg')] after:w-[16px] after:h-[16px] after:bg-no-repeat after:content[''] after:block flex items-center justify-between max-md:after:hidden"
+                  key={item.id}
+                  className="flex justify-start items-center gap-[34px] text-[#4e5968] break-keep rounded-[8px] pt-[28px] pr-[34px] pb-[28px] pl-[20px] hover:bg-[rgba(139,149,161,0.1)] transition-all duration-200 max-md:py-[14px] max-md:pr-0 max-md:pl-0 max-md:flex-col max-md:items-start max-md:gap-y-[6px]"
                 >
-                  <div className="absolute top-0 left-0 text-[#8b95a1]">Q.</div>
-                  <span className="text-gray-600">
-                    <BoldText text={item.title} keyword={keyword} />
-                  </span>
+                  <div className="min-w-[180px] basis-[180px] text-[15px] max-md:max-w-full max-md:basis-0 max-md:text-[13px] max-md:order-2 max-md:pl-[26px] ">
+                    {item.category}
+                  </div>
+                  <div
+                    className="flex-1 text-[18px] font-semibold pl-[26px] relative
+          after:bg-[url('/images/icons/subgo.svg')] after:w-[16px] after:h-[16px] after:bg-no-repeat after:content[''] after:block flex items-center justify-between max-md:after:hidden"
+                  >
+                    <div className="absolute top-0 left-0 text-[#8b95a1]">
+                      Q.
+                    </div>
+                    <span className="text-gray-600">
+                      <BoldText text={item.title} keyword={keyword} />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))
           ) : (
             <p className="flex flex-col justify-center items-center h-[240px] text-center text-[15px] text-[#8b95a1] before:content[''] before:w-[32px] before:h-[32px] before:block before:bg-[url('/images/icons/nosearch.svg')] before:bg-[100%_auto] before:bg-no-repeat before:mx-auto before:mb-[8px]">

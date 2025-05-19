@@ -19,7 +19,7 @@ export default async function ProductDetails({ params }: ProductDetailsProp) {
   const { productId } = await params;
 
   return (
-    <main className="p-[30px]">
+    <main className="p-[200px]">
       <h2 className="text-[26px] font-bold">
         details about product {productId}
       </h2>

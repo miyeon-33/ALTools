@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 const links = [
   { href: '/login', label: 'Login' },
-  { href: '/register', label: 'Register' },
   { href: '/forgot-password', label: 'Forgot password' },
 ];
 
@@ -20,12 +19,7 @@ export default function AuthLayout({
 
   return (
     <div>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <ul className="flex gap-x-[10px] p-[30px] pb-0">
+      <ul className="flex gap-x-[10px] p-[30px] pb-0 border">
         {links.map((link) => (
           <li key={link.href}>
             <Link

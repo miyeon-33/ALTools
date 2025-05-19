@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="whitespace-nowrap">
           <h4 className="pb-[4px] leading-none">
             <Link
-              href="/product/ALTOOLS"
+              href="/products/ALTOOLS"
               className="inline-block text-[15px] font-bold text-gray-600 rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
             >
               알툴즈 다운로드
@@ -24,7 +24,7 @@ export default function Footer() {
             <ul>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/ALZIP"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알집
@@ -32,7 +32,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/ALSEE"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알씨
@@ -40,7 +40,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/ALCAPTURE"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알캡처
@@ -48,7 +48,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/ALPDF"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알PDF
@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/mobile"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알툴즈 모바일
@@ -66,7 +66,7 @@ export default function Footer() {
             <ul>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/ALDRIVE"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알드라이브
@@ -74,7 +74,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/ALSONG"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알송
@@ -82,7 +82,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/products/ALYAC"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   알약
@@ -90,7 +90,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="https://alan.estsoft.ai/"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   앨런
@@ -114,7 +114,7 @@ export default function Footer() {
         <div className="whitespace-nowrap">
           <h4 className="pb-[4px] leading-none">
             <Link
-              href="/adzero/intro"
+              href="/business"
               className="inline-block text-[15px] font-bold text-gray-600 rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
             >
               비즈니스 구매
@@ -125,7 +125,7 @@ export default function Footer() {
         <div className="whitespace-nowrap">
           <h4 className="pb-[4px] leading-none">
             <Link
-              href="/adzero/intro"
+              href="/service/FAQ"
               className="inline-block text-[15px] font-bold text-gray-600 rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
             >
               고객센터
@@ -135,7 +135,7 @@ export default function Footer() {
             <ul>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/service/FAQ"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   자주하는 질문
@@ -143,7 +143,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/login"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   1:1 문의하기
@@ -151,7 +151,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/service/notice"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   공지사항
@@ -164,7 +164,7 @@ export default function Footer() {
         <div className="whitespace-nowrap">
           <h4 className="pb-[4px] leading-none">
             <Link
-              href="/adzero/intro"
+              href="/login"
               className="inline-block text-[15px] font-bold text-gray-600 rounded-[4px] py-[8px] px-[10px]"
             >
               마이페이지
@@ -174,7 +174,7 @@ export default function Footer() {
             <ul>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/login"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   구독 관리
@@ -182,7 +182,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/login"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   포인트 내역
@@ -190,7 +190,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/login"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   1:1 문의 내역
@@ -198,7 +198,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/login"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   보유 혜택 내역
@@ -206,7 +206,7 @@ export default function Footer() {
               </li>
               <li className="mt-[4px] leading-none">
                 <Link
-                  href="/product/ALZIP"
+                  href="/login"
                   className="inline-block text-[15px] text-[#8b95a1] rounded-[4px] py-[8px] px-[10px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   계정 설정
@@ -223,7 +223,7 @@ export default function Footer() {
             <ul className="flex justify-start items-center gap-[12px] flex-wrap -ml-[10px]">
               <li>
                 <Link
-                  href="/introduce"
+                  href="https://estsoft.ai/introduce"
                   className="inline-block text-[13px] font-semibold text-[#8b95a1] rounded-[4px] pt-[10px] px-[10px] pb-[9px] leading-none hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   회사소개
@@ -231,7 +231,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/introduce"
+                  href="https://xdn.altools.co.kr/altoolshp/terms/templates/terms-of-service/docs/230810.html"
                   className="inline-block text-[13px] font-semibold text-[#8b95a1] rounded-[4px] pt-[10px] px-[10px] pb-[9px] leading-none hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   이용약관
@@ -239,7 +239,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/introduce"
+                  href="https://xdn.altools.co.kr/altoolshp/terms/templates/privacy-policy/docs/250414.html"
                   className="inline-block text-[13px] font-bold text-[#4e5968] rounded-[4px] pt-[10px] px-[10px] pb-[9px] leading-none hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   개인정보처리방침
@@ -247,7 +247,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/introduce"
+                  href="https://xdn.altools.co.kr/altoolshp/terms/templates/eula/docs/241209.html"
                   className="inline-block text-[13px] font-semibold text-[#8b95a1] rounded-[4px] pt-[10px] px-[10px] pb-[9px] leading-none hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   소프트웨어 사용권 계약서
@@ -255,7 +255,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/introduce"
+                  href="/login"
                   className="inline-block text-[13px] font-semibold text-[#8b95a1] rounded-[4px] pt-[10px] px-[10px] pb-[9px] leading-none hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   제휴문의
@@ -263,7 +263,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/introduce"
+                  href="/event"
                   className="inline-block text-[13px] font-semibold text-[#8b95a1] rounded-[4px] pt-[10px] px-[10px] pb-[9px] leading-none hover:bg-[rgba(139,149,161,.1)] transition-all duration-200"
                 >
                   이벤트
@@ -284,13 +284,13 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="https://estsoft.ai/"
+                    href="https://www.facebook.com/estsoftfb/"
                     className="w-[28px] h-[28px] block bg-[url('/images/footer.png')] bg-no-repeat bg-[84px_auto] bg-[-28px_0px] hover:bg-[-28px_-28px]"
                   ></Link>
                 </li>
                 <li>
                   <Link
-                    href="https://estsoft.ai/"
+                    href="mailto:altools@estsoft.com"
                     className="w-[28px] h-[28px] block bg-[url('/images/footer.png')] bg-no-repeat bg-[84px_auto] bg-[-56px_0px] hover:bg-[-56px_-28px]"
                   ></Link>
                 </li>
@@ -324,7 +324,10 @@ export default function Footer() {
                 <dl className="flex justify-start items-center">
                   <dt>E-mail.</dt>
                   <dd className="pl-[4px]">
-                    <Link href="/" className="text-[#08f]">
+                    <Link
+                      href="mailto:altools@estsoft.com"
+                      className="text-[#08f]"
+                    >
                       altools@estsoft.com
                     </Link>
                   </dd>
@@ -355,7 +358,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        href="https://estsoft.ai/"
+                        href="https://www.estsecurity.com/"
                         className="block text-[13px] font-semibold text-[#4e5968] rounded-[4px] p-[8px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200 leading-none"
                       >
                         이스트시큐리티
@@ -363,7 +366,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        href="https://estsoft.ai/"
+                        href="https://www.estgames.co.kr/"
                         className="block text-[13px] font-semibold text-[#4e5968] rounded-[4px] p-[8px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200 leading-none"
                       >
                         이스트게임즈
@@ -371,7 +374,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        href="https://estsoft.ai/"
+                        href="https://estaid.ai/"
                         className="block text-[13px] font-semibold text-[#4e5968] rounded-[4px] p-[8px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200 leading-none"
                       >
                         이스트에이드
@@ -379,7 +382,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        href="https://estsoft.ai/"
+                        href="https://rounz.com/home.php"
                         className="block text-[13px] font-semibold text-[#4e5968] rounded-[4px] p-[8px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200 leading-none"
                       >
                         ROUNZ
@@ -387,7 +390,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        href="https://estsoft.ai/"
+                        href="https://www.exponentialinvest.com/"
                         className="block text-[13px] font-semibold text-[#4e5968] rounded-[4px] p-[8px] hover:bg-[rgba(139,149,161,.1)] transition-all duration-200 leading-none"
                       >
                         Exponential
