@@ -735,13 +735,17 @@ export default function Header() {
                   className="flex items-center text-gray-600 py-[24px] text-[18px]
                 h-[66px] font-bold border-b border-b-[#f2f4f6]"
                 >
-                  <p>알툴즈 AD-ZERO</p>
+                  <Link href="/adzero/intro" className="text-gray-600">
+                    <p>알툴즈 AD-ZERO</p>
+                  </Link>
                 </li>
                 <li
                   className="flex items-center text-gray-600 py-[24px] text-[18px]
                 h-[66px] font-bold border-b border-b-[#f2f4f6]"
                 >
-                  <p>비즈니스 구매</p>
+                  <Link href="/business" className="text-gray-600">
+                    <p>비즈니스 구매</p>
+                  </Link>
                 </li>
                 <li
                   className={`flex items-center text-gray-600 py-[24px] text-[18px]
@@ -761,15 +765,21 @@ export default function Header() {
                 </li>
                 {serviceToggle && (
                   <ul className="text-gray-600">
-                    <li className="p-[8px] leading-[1] text-[15px]">
-                      자주하는 질문
-                    </li>
-                    <li className="p-[8px] leading-[1] text-[15px] mt-[4px]">
-                      1:1 문의하기
-                    </li>
-                    <li className="p-[8px] leading-[1] text-[15px] mt-[4px]">
-                      공지사항
-                    </li>
+                    <Link href="/service/FAQ" className="text-gray-600">
+                      <li className="p-[8px] leading-[1] text-[15px]">
+                        자주하는 질문
+                      </li>
+                    </Link>
+                    <Link href="/login" className="text-gray-600">
+                      <li className="p-[8px] leading-[1] text-[15px] mt-[4px]">
+                        1:1 문의하기
+                      </li>
+                    </Link>
+                    <Link href="/service/notice" className="text-gray-600">
+                      <li className="p-[8px] leading-[1] text-[15px] mt-[4px]">
+                        공지사항
+                      </li>
+                    </Link>
                   </ul>
                 )}
               </ul>

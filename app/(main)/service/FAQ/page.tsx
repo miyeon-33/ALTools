@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { use, useEffect, useRef, useState } from 'react';
 
-type User = {
+type FAQ = {
   id: number;
   category: string;
   title: string;
@@ -62,7 +62,7 @@ export default function FAQ({
   // active
   const [activeTab, setActiveTab] = useState(paramsObj.menu || '0');
   const { isPending, data, isError, error } = useQuery<{
-    result: User[];
+    result: FAQ[];
     total: number;
   }>({
     queryKey: ['faq', page, menu, keyword],
@@ -81,12 +81,6 @@ export default function FAQ({
 
   // 검색 결과 개수
   const searchResultCount = data?.result.length || 0;
-
-  // 새로고침시 한번만 menu 쿼리 삭제
-  // useEffect(() => {
-  //   params.delete('menu');
-  //   router.push(`?${params.toString()}`);
-  // }, []);
 
   // 페이지 변경 핸들러
   useEffect(() => {

@@ -89,8 +89,8 @@ export default function ProductList() {
           <Link
             href={`/products/${product.link}`}
             className="flex justify-center items-center pt-[26px] pb-[28px] gap-x-[6.4%]
-              rounded-[12px] max-md:flex-col max-md:py-[20px] max-md:gap-y-[10px] shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]
-              w-full min-w-[90px] transition-all duration-200 hover:-translate-y-[7px] max-sm:hover:translate-y-0"
+              rounded-[16px] max-md:rounded-[12px] max-md:flex-col max-md:py-[20px] max-md:gap-y-[10px] shadow-[0_0_2px_rgba(0,0,0,0.08),4px_12px_36px_rgba(0,0,0,0.09)]
+              w-full transition-all duration-200 hover:-translate-y-[7px] max-sm:hover:translate-y-0 min-w-[90px]"
             key={product.id}
           >
             <img
@@ -100,7 +100,7 @@ export default function ProductList() {
             />
             <div className="flex flex-col">
               <div className="flex items-center">
-                <p className="text-[14px] break-keep leading-[1.2] max-md:text-[12px] text-gray-600 font-semibold">
+                <p className="text-[14px] break-keep leading-[1.2] max-md:text-[12px] text-gray-600 font-semibold text-center">
                   {product.title}
                 </p>
                 <img

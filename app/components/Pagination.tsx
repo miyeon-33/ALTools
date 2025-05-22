@@ -1,3 +1,5 @@
+'use client';
+
 import { generatePagination } from '@/app/_lib/utils';
 import { useEffect, useState } from 'react';
 
@@ -69,7 +71,7 @@ export default function Pagination({
       ></button>
       <button
         type="button"
-        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] border-0 hover:bg-[#e5e8eb] rounded-[100%] ${
+        className={`btn bg-[url('/images/pagination.png')] bg-[152px_auto] bg-no-repeat h-[38px] w-[38px] border-0 rounded-[100%] ${
           page === totalPage
             ? 'bg-[-114px_-38px] cursor-default'
             : 'bg-[-114px_0px] hover:bg-[#e5e8eb]'
