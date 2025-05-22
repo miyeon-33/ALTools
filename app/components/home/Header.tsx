@@ -454,11 +454,11 @@ export default function Header() {
                 }`}
                   onClick={() => setToggle(!toggle)}
                 >
-                  <p>알툴즈 다운로드</p>
+                  <p className="cursor-pointer">알툴즈 다운로드</p>
                   <img
                     src="/images/drop.png"
                     alt="드랍"
-                    className={`w-[10px] h-[10px] ml-[6px] ${
+                    className={`w-[10px] h-[10px] ml-[6px] cursor-pointer ${
                       toggle ? 'rotate-180' : 'rotate-0'
                     }`}
                   />
@@ -754,11 +754,11 @@ export default function Header() {
                 }`}
                   onClick={() => setServiceToggle(!serviceToggle)}
                 >
-                  <p>고객센터</p>
+                  <p className="cursor-pointer">고객센터</p>
                   <img
                     src="/images/drop.png"
                     alt="드랍"
-                    className={`w-[10px] h-[10px] ml-[6px] ${
+                    className={`w-[10px] h-[10px] ml-[6px] cursor-pointer ${
                       serviceToggle ? 'rotate-180' : 'rotate-0'
                     }`}
                   />
