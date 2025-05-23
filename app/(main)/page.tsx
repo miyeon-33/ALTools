@@ -18,10 +18,6 @@ export default function Home() {
       <Promotion />
       <Tip />
       <Shortcut />
-
-      {/* <Link href="/articles/breaking-news-123">read in korean</Link>
-      <Link href="/articles/breaking-news-123?lang=en">read in english</Link>
-      <Link href="/articles/breaking-news-123?lang=fr">read in franch</Link> */}
     </main>
   );
 }
